@@ -8,6 +8,8 @@ use App\Http\Controllers\Api\VendorItemController;
 use App\Http\Controllers\Api\TransactionController;
 use App\Http\Controllers\Api\ReportController;
 
+Route::get('ping', fn() => response()->json(['pong' => true]));
+
 Route::prefix('auth')->group(function(){
   Route::post('register',[AuthController::class,'register']);
   Route::post('login',[AuthController::class,'login']);
